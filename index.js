@@ -48,7 +48,7 @@ client.on('message', message => {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
 					}
 					else if(message.content.startsWith(`gif`)) {
-						message.channel.send(`Here you go sugar :heart:!`,`url`: `https://gph.is/g/ZdxNGvP`)
+						message.channel.send(`Here you go sugar :heart:! https://gph.is/g/ZdxNGvP`)
 					}
 
 			} catch (error) {
