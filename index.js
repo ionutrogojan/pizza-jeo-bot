@@ -57,7 +57,7 @@ client.on('message', message => {
 							var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
 							var responseFinal = response.data[responseIndex];
 							message.channel.send(`Here you go sugar :heart:!`, {
-								files: [respinseFinal.images.fixed_height.url]
+								files: [responseFinal.images.fixed_height.url]
 							})
 						})
 					}
