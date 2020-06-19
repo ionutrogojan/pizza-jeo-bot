@@ -1,13 +1,14 @@
 //Set-Location -Path C:\Users\irogo\Desktop\pizzaJoe
 
 const Discord = require('discord.js');
-//const { prefix } = require('./config.json');
-//const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 const prefixes = ["p!","joe"];
 
+var GphApiClient = require('giphy-js-sdk-core')
+giphy = GphApiClient("50gX3p6ftixGW7J948mGpPeQSE4RvD16")
+
 function catchError (error, message) {
-	message.channel.send(`Error, try again!`);
+	message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
 }
 
 client.once('ready', () => {
@@ -46,8 +47,20 @@ client.on('message', message => {
 			      	const taggedUser = message.mentions.users.first();
 			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`);
 			    }
-					else if(command === 'pizza') {
+					else if(message.content.startsWith(`joe`)) {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
+					}
+					else if(message.content.startsWith(`gif`)) {
+						ghify.search('gifs', {"q:" "pizza"})
+								.then((response) => {
+										var totalResponses = response.data.lenght;
+										var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+										var responseFinal = response.data[responseIndex];
+
+										message.channel.send(`Here you go sugar :heart:!`, {
+											files: [responseFinal.images.fixed_height.url]
+										})
+								})
 					}
 
 			} catch (error) {
