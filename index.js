@@ -42,7 +42,7 @@ client.on('message', message => {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user, p!joe, p!gif`)
 			    }
 					else if(message.content.startsWith(`pizza?`)) {
-			      	message.channel.send("Yes, pizza! but do you even pizza bro?!")
+			      	message.channel.send("I should be your first choice. https://gph.is/2ferErB!")
 			    }
 					else if(message.content.startsWith(`pizza`)){
 			      	const taggedUser = message.mentions.users.first();
@@ -57,6 +57,10 @@ client.on('message', message => {
 					else if(message.content.startsWith(` you're a dummy`)) {
 						message.channel.send(`No, U! https://i.imgur.com/mUBjN1a.jpg`)
 					}
+					else if(message.content.startsWith(` I want pizza`)) {
+						message.channel.send(`Me too! https://gph.is/19iU3Rq`)
+					}
+
 
 			} catch (error) {
 						catchError(error, message);
