@@ -10,6 +10,14 @@ function catchError (error, message) {
 
 client.once('ready', () => {
 	console.log('Ready!');
+	client.user.setStatus('available');
+	client.user.setPresence({
+		game: {
+			name: 'p!help',
+			type: 'Streaming | version 1.0.1',
+			url: 'https://ionutrogojan.github.io/ionutrogojanportfolio.github.io/'
+		}
+	});
 });
 
 client.on('message', message => {
@@ -38,7 +46,7 @@ client.on('message', message => {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user, p!joe, p!gif`)
 			    }
 					else if(message.content.startsWith(`pizza?`)) {
-			      	message.channel.send("Yes, pizza! but do you even pizza bro?! https://gph.is/19iU3Rq")
+			      	message.channel.send("Yes, pizza! but do you even pizza bro?!")
 			    }
 					else if(message.content.startsWith(`pizza`)){
 			      	const taggedUser = message.mentions.users.first();
