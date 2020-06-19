@@ -19,13 +19,13 @@ client.on('message', message => {
 			try {
 
 			  	//console.log(message.content);
-			    if(message.content.startsWith(`${prefix}help`)) {
+			    if(message.content.startsWith(`${prefix1}help`)) {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user`);
 			    }
-					else if(message.content.startsWith(`${prefix}pizza?`)) {
+					else if(message.content.startsWith(`${prefix1}pizza?`)) {
 			      	message.channel.send("Yes, pizza! but do you even pizza bro?!")
 			    }
-					else if(message.content.startsWith(`${prefix}pizza`)){
+					else if(message.content.startsWith(`${prefix1}pizza`)){
 			      	const taggedUser = message.mentions.users.first();
 			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`);
 			    }
