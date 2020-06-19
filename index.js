@@ -7,7 +7,7 @@ const client = new Discord.Client();
 const prefixes = ["p!","joe"];
 
 function catchError (error, message) {
-	message.channel.send(`Error, try again!`);
+	message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
 }
 
 client.once('ready', () => {
