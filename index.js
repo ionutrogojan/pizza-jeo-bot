@@ -54,6 +54,9 @@ client.on('message', message => {
 					else if(message.content.startsWith(`gif`)) {
 						message.channel.send(`Here you go sugar :heart:! https://gph.is/g/ZdxNGvP`)
 					}
+					else if(message.content.startsWith(` you're a dummy`)) {
+						message.channel.send(`No, U! https://i.imgur.com/mUBjN1a.jpg`)
+					}
 
 			} catch (error) {
 						catchError(error, message);
