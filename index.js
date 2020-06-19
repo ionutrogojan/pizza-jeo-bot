@@ -13,8 +13,8 @@ client.once('ready', () => {
 	client.user.setStatus('available');
 	client.user.setPresence({
 		game: {
-			name: 'p!help',
-			type: 'Streaming | version 1.0.1',
+			name: 'p!help | version 1.0.1',
+			type: 'STREAMING',
 			url: 'https://ionutrogojan.github.io/ionutrogojanportfolio.github.io/'
 		}
 	});
