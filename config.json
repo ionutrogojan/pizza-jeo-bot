@@ -1,6 +1,3 @@
 {
-  "prefix1": "p!",
-  "prefix2": "P!",
-  "prefix3": "Joe",
-  "prefix4": "joe"
+  "prefix": "p!"
 }
