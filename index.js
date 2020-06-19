@@ -12,8 +12,7 @@ client.once('ready', () => {
 	console.log('Ready!');
 		client.user.setStatus('idle');
 		client.user.setActivity('p!help | version 1.0.1', {
-				type: 'STREAMING',
-				url: 'https://ionutrogojan.github.io/ionutrogojanportfolio.github.io/'
+				type: 'PLAYING'
 		});
 });
 
