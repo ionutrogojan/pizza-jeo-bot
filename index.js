@@ -23,10 +23,10 @@ client.on('message', message => {
 		for (i=0; i<prefixes.length; i++){
     // if message starts with prefix
     // Note that here is not 《!》 unlinke before
-    if (message.content.toLowerCase().startsWith(prefix)) {
+    if (message.content.toLowerCase().startsWith(prefixes[i])) {
     thereIsPrefix = true;
     // remove prefix
-    message.content = message.content.slice(0 + prefix.length );
+    message.content = message.content.slice(0 + prefixes[i].length );
 
     // we did our job, so we exit loop
     break;
