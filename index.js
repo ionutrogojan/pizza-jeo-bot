@@ -10,14 +10,11 @@ function catchError (error, message) {
 
 client.once('ready', () => {
 	console.log('Ready!');
-	client.user.setStatus('available');
-	client.user.setPresence({
-		game: {
-			name: 'p!help | version 1.0.1',
-			type: 'STREAMING',
-			url: 'https://ionutrogojan.github.io/ionutrogojanportfolio.github.io/'
-		}
-	});
+		client.user.setStatus('idle');
+		client.user.setActivity('p!help | version 1.0.1', {
+				type: 'STREAMING',
+				url: 'https://ionutrogojan.github.io/ionutrogojanportfolio.github.io/'
+		});
 });
 
 client.on('message', message => {
