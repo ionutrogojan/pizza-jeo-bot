@@ -15,17 +15,17 @@ client.once('ready', () => {
 
 client.on('message', message => {
   if(message.member.hasPermission(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
-
+		if(message.author.bot) return;
 			try {
 
 			  	//console.log(message.content);
 			    if(message.content.startsWith(`${prefix}help`)) {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user`);
 			    }
-					else if(message.content.startsWith(`${prefix1}pizza?`)) {
+					else if(message.content.startsWith(`${prefix}pizza?`)) {
 			      	message.channel.send("Yes, pizza! but do you even pizza bro?!")
 			    }
-					else if(message.content.startsWith(`${prefix1}pizza`)){
+					else if(message.content.startsWith(`${prefix}pizza`)){
 			      	const taggedUser = message.mentions.users.first();
 			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`);
 			    }
