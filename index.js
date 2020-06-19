@@ -1,9 +1,10 @@
 //Set-Location -Path C:\Users\irogo\Desktop\pizzaJoe
 
 const Discord = require('discord.js');
-const { prefix } = require('./config.json');
+//const { prefix } = require('./config.json');
 //const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
+const prefixes = ["p!","joe"];
 
 function catchError (error, message) {
 	message.channel.send(`Error, try again!`);
@@ -16,6 +17,22 @@ client.once('ready', () => {
 client.on('message', message => {
   if(message.member.hasPermission(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
 		if(message.author.bot) return;
+
+		let thereIsPrefix = false;
+		// For each element of prefixes
+		for (i=0; i<prefixes.length; i++){
+    // if message starts with prefix
+    // Note that here is not 《!》 unlinke before
+    if (message.content.toLowerCase().startsWith(prefix)) {
+    thereIsPrefix = true;
+    // remove prefix
+    message.content = message.content.slice(0 + prefix.length );
+
+    // we did our job, so we exit loop
+    break;
+    }
+}
+
 			try {
 
 			  	//console.log(message.content);
