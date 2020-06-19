@@ -1,7 +1,7 @@
 //Set-Location -Path C:\Users\irogo\Desktop\pizzaJoe
 
 const Discord = require('discord.js');
-const { prefix } = require('./config.json');
+const { prefix1 } = require('./config.json');
 //const { prefix, token } = require('./config.json');
 const client = new Discord.Client();
 
