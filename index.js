@@ -35,7 +35,7 @@ client.on('message', message => {
 
 			  	//console.log(message.content);
 			    if(message.content.startsWith(`help`)) {
-			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user`);
+			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user, p!joe, p!gif`);
 			    }
 					else if(message.content.startsWith(`pizza?`)) {
 			      	message.channel.send("Yes, pizza! but do you even pizza bro?!")
@@ -48,7 +48,7 @@ client.on('message', message => {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
 					}
 					else if(message.content.startsWith(`gif`)) {
-						message.channel.send(`Here you go sugar :heart:! https://gph.is/g/ZdxNGvP`)
+						message.channel.send(`Here you go sugar :heart:!`,`url`: `https://gph.is/g/ZdxNGvP`)
 					}
 
 			} catch (error) {
