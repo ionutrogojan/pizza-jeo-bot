@@ -7,7 +7,7 @@ const client = new Discord.Client();
 const prefixes = ["p!","joe"];
 
 function catchError (error, message) {
-	message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
+	message.channel.send(`Error, try again!`);
 }
 
 client.once('ready', () => {
@@ -46,6 +46,9 @@ client.on('message', message => {
 			      	const taggedUser = message.mentions.users.first();
 			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`);
 			    }
+					else if(command === 'pizza') {
+						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
+					}
 
 			} catch (error) {
 						catchError(error, message);
