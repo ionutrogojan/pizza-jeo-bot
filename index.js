@@ -27,7 +27,7 @@ client.on('message', message => {
 			    }
 					else if(message.content.startsWith(`${prefix}pizza`)){
 			      	const taggedUser = message.mentions.users.first();
-			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy :pizzablob: !`);
+			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`);
 			    }
 
 			} catch (error) {
