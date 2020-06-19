@@ -51,7 +51,7 @@ client.on('message', message => {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
 					}
 					else if(message.content.startsWith(`gif`)) {
-						giphy.search('gifs', {"p:" "fail"})
+						giphy.search('gifs', {"p:" "pizza"})
 						.then((response) => {
 							var totalResponses = response.data.length;
 							var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
