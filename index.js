@@ -19,7 +19,7 @@ client.on('message', message => {
 			try {
 
 			  	//console.log(message.content);
-			    if(message.content.startsWith(`${prefix1}help`)) {
+			    if(message.content.startsWith(`${prefix1}help`) || .startsWith(`${prefix2}help`)) {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user`);
 			    }
 					else if(message.content.startsWith(`${prefix1}pizza?`)) {
