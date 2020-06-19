@@ -4,8 +4,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefixes = ["p!","joe"];
 
-var GphApiClient = require('giphy-js-sdk-core');
-giphy = GphApiClient(precess.env.GIPHYTOKEN);
+const GphApiClient = require('giphy-js-sdk-core');
+
 
 function catchError (error, message) {
 	message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
@@ -51,11 +51,11 @@ client.on('message', message => {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
 					}
 					else if(message.content.startsWith(`gif`)) {
-						ghify.search('gifs', {"q:" "pizza"})
+						giphy.search('gifs', {"q:" "pizza"})
 								.then((response) => {
-										var totalResponses = response.data.lenght;
-										var responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
-										var responseFinal = response.data[responseIndex];
+										const totalResponses = response.data.lenght;
+										const responseIndex = Math.floor((Math.random() * 10) + 1) % totalResponses;
+										const responseFinal = response.data[responseIndex];
 
 										message.channel.send(`Here you go sugar :heart:!`, {
 											files: [responseFinal.images.fixed_height.url]
@@ -71,3 +71,4 @@ client.on('message', message => {
 });
 
 client.login(process.env.TOKEN);
+giphy = GphApiClient(precess.env.GIPHYTOKEN);
