@@ -42,7 +42,7 @@ client.on('message', message => {
 			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user, p!joe, p!gif, I want pizza, you're a dummy`)
 			    }
 					else if(message.content.startsWith(`pizza?`)) {
-			      	message.channel.send("I should be your first choice. https://gph.is/2ferErB!")
+			      	message.channel.send("I should be your first choice. https://gph.is/2ferErB !")
 			    }
 					else if(message.content.startsWith(`pizza`)){
 			      	const taggedUser = message.mentions.users.first();
