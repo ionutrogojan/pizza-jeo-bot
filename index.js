@@ -4,8 +4,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefixes = ["p!","joe"];
 
-var GphApiClient = require('giphy-js-sdk-core')
-giphy = GphApiClient("50gX3p6ftixGW7J948mGpPeQSE4RvD16")
+var GphApiClient = require('giphy-js-sdk-core');
+giphy = GphApiClient(precess.env.GIPHYTOKEN);
 
 function catchError (error, message) {
 	message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
