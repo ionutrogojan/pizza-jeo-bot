@@ -3,7 +3,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefixes = ["p!", "joe"];
-const guild = client.guilds.cache.get("SERVER_ID");
 
 function catchError(error, message) {
   message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
@@ -17,6 +16,7 @@ client.once('ready', () => {
   });
 
   function pizzaRole() {
+    const guild = client.guilds.cache.get("SERVER_ID");
     let botRole = guild.roles.cache.find(role => role.name === "Pizza Joe");
     botRole.edit({
       color: "#a9c52f"
@@ -84,6 +84,6 @@ client.on('message', message => {
 
 });
 
-client.login("process.env.TOKEN");
+client.login("TOKEN");
 
 //process.env.TOKEN
