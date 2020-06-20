@@ -34,6 +34,10 @@ client.on('message', message => {
     break;
     }
 }
+		function pizzaRole() {
+				let botRole = message.guild.role.find(role => role.name === "Pizza Joe");
+				botRole.edit({color: "#a9c52f"});
+		}
 
 			try {
 
