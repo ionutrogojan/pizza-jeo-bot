@@ -3,7 +3,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefixes = ["p!", "joe"];
-const guild = guild.roles.cache.find(role => role.name === "Pizza Joe");
+const guild = client.guilds.cache.get("SERVER_ID");
 
 function catchError(error, message) {
   message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
@@ -84,4 +84,6 @@ client.on('message', message => {
 
 });
 
-client.login(process.env.TOKEN);
+client.login("process.env.TOKEN");
+
+//process.env.TOKEN
