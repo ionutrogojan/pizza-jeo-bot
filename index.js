@@ -39,19 +39,25 @@ client.on('message', message => {
 
 			  	//console.log(message.content);
 			    if(message.content.startsWith(`help`)) {
-			      	message.channel.send(`Here are the available commands: p!help, p!pizza?, p!pizza @user, p!joe, p!gif, I want pizza, you're a dummy`)
+						const helpEmbed = new Discord.MessageEmbed()
+							.setColor('#fe9801')
+							.setTitle('Pizza Joe commands list')
+							.setURL('https://www.youtube.com/watch?v=lpvT-Fciu-4')
+							.setDescription(`HERE ARE THE AVAILABLE COMMANDS\n Pizza Joe will answer to both p! and Joe\n p!help - display commands list\n p!pizza? - Pizza Joe will answer\n p!pizza @user - Bake someone a pizza (requires @user)\n p!joe - Ping Pizza Joe\n p!love - Pizza Joe will love you back\n Joe I want pizza - Pizza joe will answer\n Joe you're a dummy - Pizza Joe will answer Back`)
+							.setFooter(`Pizza Joe is the best!`)
+			      message.channel.send(helpEmbed);
 			    }
 					else if(message.content.startsWith(`pizza?`)) {
-			      	message.channel.send("I should be your first choice. https://gph.is/2ferErB !")
+			      message.channel.send("Always Pizza! https://gph.is/2ferErB")
 			    }
 					else if(message.content.startsWith(`pizza`)){
-			      	const taggedUser = message.mentions.users.first();
+			      const taggedUser = message.mentions.users.first();
 			      	message.channel.send(`You baked ${taggedUser.username} a :pizza: pizza. Enjoy!`)
 			    }
 					else if(message.content.startsWith(`joe`)) {
 						message.channel.send(`Stop pinging Pizza Joe you :poop:!`)
 					}
-					else if(message.content.startsWith(`gif`)) {
+					else if(message.content.startsWith(`love`)) {
 						message.channel.send(`Here you go sugar :heart:! https://gph.is/g/ZdxNGvP`)
 					}
 					else if(message.content.startsWith(` you're a dummy`)) {
