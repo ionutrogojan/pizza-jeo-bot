@@ -14,6 +14,11 @@ client.once('ready', () => {
 		client.user.setActivity('p!help | version 1.0.2', {
 				type: 'PLAYING'
 		});
+		function pizzaRole() {
+				let botRole = message.guild.role.find(role => role.name === "Pizza Joe");
+				botRole.edit({color: "#a9c52f"});
+		}
+		return pizzaRole();
 });
 
 client.on('message', message => {
@@ -34,10 +39,6 @@ client.on('message', message => {
     break;
     }
 }
-		function pizzaRole() {
-				let botRole = message.guild.role.find(role => role.name === "Pizza Joe");
-				botRole.edit({color: "#a9c52f"});
-		}
 
 			try {
 
