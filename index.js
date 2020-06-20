@@ -11,7 +11,7 @@ function catchError (error, message) {
 client.once('ready', () => {
 	console.log('Ready!');
 		client.user.setStatus('idle');
-		client.user.setActivity('p!help | version 1.0.1', {
+		client.user.setActivity('p!help | version 1.0.2', {
 				type: 'PLAYING'
 		});
 });
