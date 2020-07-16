@@ -52,8 +52,29 @@ client.on('message', message => {
         case 'help':
             client.commands.get('help').execute(message, args);
         break;
+        case 'update':
+            client.commands.get('update').execute(message, args);
+        break;
         case 'pizza':
             client.commands.get('pizza').execute(message, args);
+        break;
+        case 'morning':
+            client.commands.get('morning').execute(message, args);
+        break;
+        case 'night':
+            client.commands.get('night').execute(message, args);
+        break;
+        case 'joe':
+            client.commands.get('joe').execute(message, args);
+        break;
+        case 'love':
+            client.commands.get('love').execute(message, args);
+        break;
+        case 'vote':
+            client.commands.get('vote').execute(message, args);
+        break;
+        case ' I want pizza':
+            client.commands.get('iwantpizza').execute(message, args);
         break;
       }
 
