@@ -73,7 +73,7 @@ client.on('message', message => {
         case 'vote':
             client.commands.get('vote').execute(message, args);
         break;
-        case ' I want pizza':
+        case 'Iwantpizza':
             client.commands.get('iwantpizza').execute(message, args);
         break;
       }
