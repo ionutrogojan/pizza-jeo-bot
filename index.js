@@ -52,6 +52,9 @@ client.on('message', message => {
         case "help":
             client.commands.get('help').execute(message, args);
         break;
+        case "pizza":
+            client.commands.get('pizza').execute(message, args);
+        break;
       }
 
     } catch (error) {
