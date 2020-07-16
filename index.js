@@ -4,25 +4,25 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefixes = ["p!", "joe"];
 
+const fs = require('fs');
+client.commands = new Discord.Collection();
+
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
+for(const file of commandFiles){
+  const command = require(`./commands/${file}`);
+
+  client.commands.set(command.name, command);
+}
+
 function catchError(error, message) {
-  message.channel.send(`Be more specific, I'm to cool to solve that :sunglasses:!`);
+  console.log(`command error`);
 }
 
 client.once('ready', () => {
   console.log('Ready!');
-  client.user.setStatus('idle');
-  client.user.setActivity('p!help | version 1.0.2', {
+  client.user.setActivity('p!help | version 1.0.3', {
     type: 'PLAYING'
   });
-
-  function pizzaRole() {
-    const guild = client.guilds.cache.get("SERVER_ID");
-    let botRole = guild.roles.cache.find(role => role.name === "Pizza Joe");
-    botRole.edit({
-      color: "#a9c52f"
-    });
-  }
-  return pizzaRole();
 });
 
 client.on('message', message => {
@@ -44,18 +44,17 @@ client.on('message', message => {
       }
     }
 
+    let args = message.content.substring(prefixes[i]).split(" ");
+
     try {
 
+      switch (args[0]) {
+        case "help":
+            client.commands.get('help').execute(message, args);
+        break;
+      }
       //console.log(message.content);
-      if (message.content.startsWith(`help`)) {
-        const helpEmbed = new Discord.MessageEmbed()
-          .setColor('#fe9801')
-          .setTitle('Pizza Joe commands list')
-          .setURL('https://www.youtube.com/watch?v=lpvT-Fciu-4')
-          .setDescription("**HERE ARE THE AVAILABLE COMMANDS**\n Pizza Joe will answer to both `p!` and `Joe`\n \n `p!help` - display commands list\n \n `p!vote` - display vote link to support Pizza Joe\n `p!pizza?` - Pizza Joe will answer\n `p!morning @user` - Pizza Joe will say Morning\n`p!night @user` - Pizza Joe will say Good Night\n `p!pizza @user` - Bake someone a pizza (requires @user)\n `p!joe` - Ping Pizza Joe\n `p!love` - Pizza Joe will love you back\n `Joe I want pizza` - Pizza joe will answer\n `Joe you're a dummy` - Pizza Joe will answer back\n \n **USEFUL LINKS**\n [INVITE ME](https://discord.com/oauth2/authorize?client_id=723293726515921027&permissions=412736&scope=bot) | [SUPPORT](https://discord.com/invite/tEaZ2c7)")
-          .setFooter(`Pizza Joe is the best!`)
-        message.channel.send(helpEmbed);
-      } else if (message.content.startsWith(`pizza?`)) {
+      if (message.content.startsWith(`pizza?`)) {
         message.channel.send("Always Pizza! https://gph.is/2ferErB")
       } else if (message.content.startsWith(`morning`)) {
         const taggedUser = message.mentions.users.first();
