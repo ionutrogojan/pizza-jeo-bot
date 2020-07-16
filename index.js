@@ -49,10 +49,10 @@ client.on('message', message => {
     try {
 
       switch (args[0]) {
-        case "help":
+        case 'help':
             client.commands.get('help').execute(message, args);
         break;
-        case "pizza":
+        case 'pizza':
             client.commands.get('pizza').execute(message, args);
         break;
       }
