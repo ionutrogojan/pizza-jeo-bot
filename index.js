@@ -26,7 +26,6 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-  if (message.member.hasPermission(['SEND_MESSAGES', 'VIEW_CHANNEL'])) {
     if (message.author.bot) return;
 
     let thereIsPrefix = false;
@@ -44,7 +43,7 @@ client.on('message', message => {
       }
     }
 
-    let args = message.content.substring(prefixes[i]).split(" ");
+    let args = message.content.substring(prefixes[i]).split(/ +/);
 
     try {
 
@@ -81,7 +80,6 @@ client.on('message', message => {
     } catch (error) {
       catchError(error, message);
     }
-  }
 
 });
 
