@@ -2,7 +2,7 @@
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefixes = ["p!", "joe"];
+const prefixes = ["p!"];
 
 const fs = require('fs');
 client.commands = new Discord.Collection();
@@ -20,7 +20,7 @@ function catchError(error, message) {
 
 client.once('ready', () => {
   console.log('Ready!');
-  client.user.setActivity('p!help | version 1.0.3', {
+  client.user.setActivity('p!help | version 1.0.4', {
     type: 'PLAYING'
   });
 });
