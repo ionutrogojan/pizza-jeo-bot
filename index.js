@@ -31,6 +31,7 @@ client.on('message', message => {
     let thereIsPrefix = false;
     // For each element of prefixes
     for (i = 0; i < prefixes.length; i++) {
+
       // if message starts with prefix
       // Note that here is not 《!》 unlinke before
       if (message.content.toLowerCase().startsWith(prefixes[i])) {
@@ -41,6 +42,8 @@ client.on('message', message => {
         // we did our job, so we exit loop
         break;
       }
+      // if message is missing prefix don't answer
+      if(message.content.indexOf(prefixes[i]) !== 0) return;
     }
 
     let args = message.content.substring(prefixes[i]).split(/ +/);
@@ -72,8 +75,8 @@ client.on('message', message => {
         case 'vote':
             client.commands.get('vote').execute(message, args);
         break;
-        case 'Iwantpizza':
-            client.commands.get('iwantpizza').execute(message, args);
+        case 'throw':
+            client.commands.get('throw').execute(message, args);
         break;
       }
 
