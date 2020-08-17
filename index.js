@@ -20,7 +20,7 @@ function catchError(error, message) {
 
 client.once('ready', () => {
   console.log('Ready!');
-  client.user.setActivity('p!help | version 1.0.4', {
+  client.user.setActivity('p!help | version 1.0.5', {
     type: 'PLAYING'
   });
 });
